@@ -23,7 +23,7 @@ public class Email {
 
     //generate email
     private String generate_email(){
-        return this.fName.toLowerCase() + "." + this.lName.toLowerCase() + "@" + this.dept.toLowerCase() + ""
+        return this.fName.toLowerCase() + "." + this.lName.toLowerCase() + "@" + this.dept.toLowerCase() + COMPANY_NAME;
     }
 
     //asking for department
@@ -94,6 +94,6 @@ public class Email {
                     flag = false;
 
             }
-        }
+        } while (!flag);
     }
 }
