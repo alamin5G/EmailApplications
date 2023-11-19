@@ -1,5 +1,6 @@
 package emailapp;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Email {
@@ -51,5 +52,48 @@ public class Email {
         }while (!true);
 
         return null;
+    }
+
+    //generate random password
+    private String genereate_password(int length){
+        Random random = new Random();
+        String capitalCharacter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String smallCharacter = "abcdefghijklmnopqrstuvwxyz";
+        String numbers = "0123456789";
+        String symbols = "';!@#$%^&*()/.,?";
+        String valueOfPassword = capitalCharacter + smallCharacter + numbers + symbols;
+        String password = "";
+        for(int i=0; i<length; i++){
+            password = password + valueOfPassword.charAt(random.nextInt(valueOfPassword.length()));
+        }
+        return password;
+    }
+
+
+    //Changing password for user;
+    public void setPassword(){
+        boolean flag = false;
+        do {
+            System.out.println("Do ou want to change your passowrd? (y/n): ");
+            char choice = input.next().charAt(0);
+            switch (choice){
+                case 'y':
+                    flag = true;
+                    System.out.println("Enter new Password: ");
+                    String tempPassword = input.next();
+                    if(tempPassword.equals(this.password)){
+                        System.out.println("Enter new Password: ");
+                        this.password = input.next();
+
+                    }
+                    break;
+                case 'Y':
+                    flag = true;
+                    break;
+                case 'n':
+                    flag = false;
+
+            }
+        }
     }
 }
