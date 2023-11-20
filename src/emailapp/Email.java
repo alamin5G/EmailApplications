@@ -144,7 +144,7 @@ public class Email {
             fileWriter.append("\nEmail: " + this.email);
             fileWriter.append("\nPassword: " + this.password);
             fileWriter.append("\nCapacity: " + this.emailCapacity);
-            fileWriter.append("\nAlter Eamil: " + this.alterEmail);
+            fileWriter.append("\nAlter Eamil: " + this.alterEmail + "MB");
             fileWriter.close();
             System.out.println("Data Stored successfully.");
         }catch (Exception e){
@@ -159,7 +159,7 @@ public class Email {
             FileReader fileReader = new FileReader("C:\\Users\\alami\\Desktop\\userInfo.txt");
             int i;
             while ((i=fileReader.read()) != -1){
-                System.out.println((char) 1);
+                System.out.print((char) i);
             }
             fileReader.close();
         }catch (Exception e){
