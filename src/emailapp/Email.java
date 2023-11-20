@@ -143,8 +143,8 @@ public class Email {
             fileWriter.append("\nLastName: " + this.lName);
             fileWriter.append("\nEmail: " + this.email);
             fileWriter.append("\nPassword: " + this.password);
-            fileWriter.append("\nCapacity: " + this.emailCapacity);
-            fileWriter.append("\nAlter Eamil: " + this.alterEmail + "MB");
+            fileWriter.append("\nCapacity: " + this.emailCapacity+ "MB");
+            fileWriter.append("\nAlter Eamil: " + this.alterEmail );
             fileWriter.close();
             System.out.println("Data Stored successfully.");
         }catch (Exception e){
