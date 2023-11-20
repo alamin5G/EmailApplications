@@ -1,5 +1,8 @@
 package emailapp;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -130,5 +133,38 @@ public class Email {
         System.out.println("Alternative Email: " + this.alterEmail);
     }
 
+
+    //Store user info
+
+    public void storeFile(){
+        try {
+            FileWriter fileWriter = new FileWriter("C:\\Users\\alami\\Desktop\\userInfo.txt");
+            fileWriter.write("First Name: " + this.fName);
+            fileWriter.append("\nLastName: " + this.lName);
+            fileWriter.append("\nEmail: " + this.email);
+            fileWriter.append("\nPassword: " + this.password);
+            fileWriter.append("\nCapacity: " + this.emailCapacity);
+            fileWriter.append("\nAlter Eamil: " + this.alterEmail);
+            fileWriter.close();
+            System.out.println("Data Stored successfully.");
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+
+    //read the information
+    public void readFile(){
+        try {
+            FileReader fileReader = new FileReader("C:\\Users\\alami\\Desktop\\userInfo.txt");
+            int i;
+            while ((i=fileReader.read()) != -1){
+                System.out.println((char) 1);
+            }
+            fileReader.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 
 }

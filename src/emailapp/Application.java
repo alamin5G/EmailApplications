@@ -15,7 +15,8 @@ public class Application {
         System.out.println("Congrats, your email has been created!");
         int choice;
         do {
-            System.out.println("\nPlease, enter your option: \n1. Get Info\n2. Change Password\n3. Change email storage capacity\n4. Change Alternative Email\n5. Logout");
+            System.out.println("\nPlease, enter your option: \n1. Get Info\n2. Change Password\n3. Change email storage capacity\n4. Change Alternative Email\n" +
+                    "5. Store\n6.Read\n7. Logout");
             choice = input.nextInt();
             switch (choice){
                 case 1:
@@ -31,12 +32,18 @@ public class Application {
                     user1.setAlterEmail();
                     break;
                 case 5:
+                    user1.storeFile();
+                    break;
+                case 6:
+                    user1.readFile();
+                    break;
+                case 7:
                     System.out.println("Thank you! See you soon.");
                     break;
                 default:
                     System.out.println("You Entered invalid option.");
             }
-        }while (choice!=5);
+        }while (choice!=7);
 
     }
 }
